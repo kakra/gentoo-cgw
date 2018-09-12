@@ -1,0 +1,8 @@
+#!/bin/sh
+CGW_DIR=$(dirname $0)
+CGW_BIN=$(basename $0)
+if [ "${CGW_DIR}" == "/usr/local/libexec" ]; then
+	echo "$0: Refusing to loop" >&2
+	exit 1
+fi
+exec systemd-run --user --slice browser.slice --scope ${CGW_DIR}/cgw-${CGW_BIN} "$@"

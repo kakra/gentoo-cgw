@@ -1,0 +1,9 @@
+[Unit]
+Description=Browser Slice
+Before=slices.target
+
+[Slice]
+MemoryLow=2G
+MemoryHigh=4G
+MemoryLimit=4G
+CPUWeight=25

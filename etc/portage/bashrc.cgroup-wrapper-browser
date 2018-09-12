@@ -1,0 +1,21 @@
+# source this file into /etc/portage/bashrc:
+# . /etc/portage/bashrc.cgroup-wrapper-browser
+
+bashrc_hook_cgroup_wrapper() {
+	mv ${D%/}$1/$2 ${D%/}$1/cgw-$2 || die "could not rename file"
+	ln -snf /usr/local/libexec/cgroup-wrapper-browser ${D%/}$1/$2 || die "could not link wrapper"
+}
+
+case "${EBUILD_PHASE}" in
+	preinst)
+		# cgroup wrapper hooks
+		case "${PN}" in
+			google-chrome)
+				bashrc_hook_cgroup_wrapper /usr/bin google-chrome-stable
+				;;
+			vivaldi)
+				bashrc_hook_cgroup_wrapper /usr/bin vivaldi
+				bashrc_hook_cgroup_wrapper /usr/bin vivaldi-stable
+				;;
+		esac
+esac

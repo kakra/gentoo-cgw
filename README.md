@@ -3,7 +3,7 @@ Gentoo Cgroup Wrapper for Browsers
 
 This repository contains a simple cgroup wrapper to put browsers into their
 own systemd slice to limit their resource usage. This is especially useful
-because modern browsers tend to dominate the filesystem cache for their own
+because modern browsers tend to dominate the file system cache for their own
 continuous IO usage (caching, libraries). It is also possible to limit
 runaway CPU usage with this. Systems with long running browsers sessions and
 a lot of open tabs can greatly benefit from this and system responsiveness
@@ -39,10 +39,10 @@ browser into.
 Installation
 ------------
 
-Place the contained file in your file system and source the portage hooks
+Place the contained files in your file system and source the portage hooks
 into portage's bashrc. Then reinstall one of the supported browsers.
 
-Do not put the wrapper somewhere else then /usr/local/libexec because it
+Do not put the wrapper somewhere else than /usr/local/libexec because it
 currently checks its caller name to prevent looping. This may be fixed later
 (PRs welcome).
 

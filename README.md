@@ -42,10 +42,6 @@ Installation
 Place the contained files in your file system and source the portage hooks
 into portage's bashrc. Then reinstall one of the supported browsers.
 
-Do not put the wrapper somewhere else than /usr/local/libexec because it
-currently checks its caller name to prevent looping. This may be fixed later
-(PRs welcome).
-
 
 Uninstallation
 --------------

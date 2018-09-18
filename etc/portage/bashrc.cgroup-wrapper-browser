@@ -10,6 +10,9 @@ case "${EBUILD_PHASE}" in
 	preinst)
 		# cgroup wrapper hooks
 		case "${PN}" in
+			firefox-bin)
+				bashrc_hook_cgroup_wrapper /usr/bin firefox-bin
+				;;
 			google-chrome)
 				bashrc_hook_cgroup_wrapper /usr/bin google-chrome-stable
 				;;

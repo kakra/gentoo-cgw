@@ -17,6 +17,7 @@ It also provides systemd slices where you can adjust the limits.
 
 Currently supported browsers:
 
+  * Firefox Stable (www-client/firefox-bin)
   * Google Chrome Stable (www-client/google-chrome)
   * Vivaldi Stable (www-client/vivaldi)
 

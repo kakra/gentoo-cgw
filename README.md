@@ -43,6 +43,9 @@ Installation
 Place the contained files in your file system and source the portage hooks
 into portage's bashrc. Then reinstall one of the supported applications.
 
+You can run `make install` to do the copying. You'd still need to properly
+hook into portage and reinstall packages.
+
 
 Uninstallation
 --------------

@@ -1,7 +1,7 @@
 Gentoo Cgroup Wrapper for Browsers
 ==================================
 
-This repository contains a simple cgroup wrapper to put browsers into their
+This repository contains a simple cgroup wrapper to put applications into their
 own systemd slice to limit their resource usage. This is especially useful
 because modern browsers tend to dominate the file system cache for their own
 continuous IO usage (caching, libraries). It is also possible to limit
@@ -10,21 +10,21 @@ a lot of open tabs can greatly benefit from this and system responsiveness
 is restored.
 
 To do this, we hook the portage installation functions to rename the
-original browser start script, put a wrapper script instead which then calls
-the original script through systemd-run.
+original application launcher, put a wrapper script instead which then calls
+the original executable through systemd-run.
 
-It also provides a systemd slice where you can adjust the limits.
+It also provides systemd slices where you can adjust the limits.
 
 Currently supported browsers:
 
   * Google Chrome Stable (www-client/google-chrome)
   * Vivaldi Stable (www-client/vivaldi)
 
-Adding more browsers is as simple as:
+Adding more applications is as simple as:
 
-1. Find which scripts start the browser in your .desktop files
+1. Find which scripts start the application in your .desktop files
    (/usr/share/applications)
-2. Add these to bashrc.cgroup-wrapper-browser
+2. Add these to bashrc.cgroup-wrapper
 3. Reinstall the package
 
 
@@ -40,13 +40,13 @@ Installation
 ------------
 
 Place the contained files in your file system and source the portage hooks
-into portage's bashrc. Then reinstall one of the supported browsers.
+into portage's bashrc. Then reinstall one of the supported applications.
 
 
 Uninstallation
 --------------
 
-Remove the bashrc hook from portage and reinstall your browsers, then
+Remove the bashrc hook from portage and reinstall your applications, then
 remove the remaining files.
 
 

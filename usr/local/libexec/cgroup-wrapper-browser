@@ -4,7 +4,7 @@ CGW_DIR=$(dirname $0)
 CGW_BIN=$(basename $0)
 CGW_SCRIPT="${CGW_DIR}/cgw-${CGW_BIN}"
 
-[ -L "${CGW_SCRIPT}" ] && exec systemd-run --user --slice browser.slice --scope ${CGW_DIR}/cgw-${CGW_BIN} "$@"
+[ -x "${CGW_SCRIPT}" ] && [ -L "$0" ] && exec systemd-run --user --slice browser.slice --scope ${CGW_DIR}/cgw-${CGW_BIN} "$@"
 
 echo "$0: Failed to run '${CGW_SCRIPT}' or not called via symlink." 2>&1
 exit 126

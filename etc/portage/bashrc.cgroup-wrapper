@@ -20,5 +20,9 @@ case "${EBUILD_PHASE}" in
 				bashrc_hook_cgroup_wrapper browser /usr/bin vivaldi
 				bashrc_hook_cgroup_wrapper browser /usr/bin vivaldi-stable
 				;;
+			baloo)
+				bashrc_hook_cgroup_wrapper bgworker /usr/bin baloo_file
+				bashrc_hook_cgroup_wrapper bgworker /usr/bin baloo_file_extractor
+				;;
 		esac
 esac

@@ -3,7 +3,5 @@ Description=Background Worker Slice
 Before=slices.target
 
 [Slice]
-MemoryLow=1G
-MemoryHigh=2G
-MemoryLimit=3G
+MemoryLow=2G
 CPUWeight=25
